@@ -4,6 +4,9 @@ const passport = require('passport');
 
 const app = express();
 
+// Load User model
+require('./models/User');
+
 // Passport Config
 require('./config/passport')(passport);
 
