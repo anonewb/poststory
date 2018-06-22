@@ -7,17 +7,22 @@
     {{!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css"> --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    <link rel="stylesheet" href="/css/style.css">
   <title>Storybooks</title>
 </head>
 <body>
   
   {{> _header}}
+  {{#if user}}
+    {{> _add-btn}}
+  {{/if}}
   <main>
     <div class="container">
       {{{body}}}
     </div>
   </main>
-  
+  {{!-- sticky footer --}}
+  {{> _footer}}
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
   {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> --}}

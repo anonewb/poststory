@@ -4,6 +4,7 @@ const passport = require('passport');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
+const path = require('path');
 
 const app = express();
 
@@ -55,6 +56,9 @@ app.use((req, res, next) => {
   res.locals.user = req.user || null;
   next();
 });
+
+// Set static folder
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Use Routes
 app.use('/', index);
