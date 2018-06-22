@@ -27,13 +27,21 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
   {{!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script> --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
+"></script>
 
   <script>
 
-    // using materialize v0.98.0 to use below jQuery snippet
+    
     $(document).ready(() => {
+      // using materialize v0.98.0 to use below jQuery .sideNav()
       $('.button-collapse').sideNav();
+      // for materialize select to work
       $('select').material_select();
+      });
+
+    CKEDITOR.replace('body',{
+      plugins: 'wysiwygarea,toolbar,basicstyles,link' //only these tools of ckeditor are shown
     });
 
     
