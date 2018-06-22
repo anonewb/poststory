@@ -5,7 +5,9 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const path = require('path');
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
+const methodOverride = require('method-override');
+
 
 const app = express();
 
@@ -45,6 +47,8 @@ mongoose.connect(keys.monogoURI,)
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+// Method Override Middelware
+app.use(methodOverride('_method'));
 
 // Handlebars Middleware
 app.engine('handlebars', exphbs({
