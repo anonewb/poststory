@@ -20,7 +20,8 @@
             <a class="btn left-align" href="/stories/edit/{{id}}"><i class="fa fa-pencil"></i> Edit</a>
 
             <form action="/stories/{{id}}?_method=DELETE" method="post" id="delete-form">
-              <input type="hidden" name="post" value="DELETE">
+              {{!-- add this hidden field  for delete req --}}
+              <input type="hidden" name="_method" value="DELETE">
               <button type="submit" class="btn red"><i class="fa fa-remove"></i> Delete</button>
             </form>
           </td>
