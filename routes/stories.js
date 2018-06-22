@@ -7,7 +7,15 @@ const User = mongoose.model('users');
 
 // Stories Index
 router.get('/', (req, res) => {
-  res.render('stories/index');
+  Story.find({status:'public'})
+    .populate('user') // for reference purpose
+                      //*** it will populate all the fields of user with user's collection, then we can have access to it inside views
+    .sort({date:'desc'})
+    .then(stories => {
+      res.render('stories/index', {
+        stories: stories
+      });
+    });
 });
 
 // Add Story form
