@@ -38,6 +38,22 @@ router.get('/add', ensureAuthenticated, (req, res) => {
   res.render('stories/add');
 });
 
+// Edit Story Form
+router.get('/edit/:id', ensureAuthenticated, (req, res) => {
+  Story.findOne({
+    _id: req.params.id
+  })
+  .then(story => {
+    if(story.user != req.user.id){
+      res.redirect('/stories');
+    } else {
+      res.render('stories/edit', {
+        story: story
+      });
+    }
+  });
+});
+
 // Process Add Story
 router.post('/', (req, res) => {
   // console.log(req.body);
