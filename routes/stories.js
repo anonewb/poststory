@@ -45,7 +45,7 @@ router.get('/edit/:id', ensureAuthenticated, (req, res) => {
     _id: req.params.id
   })
   .then(story => {
-    if(story.user != req.user.id){
+    if(story.user != req.user.id){ // access control
       res.redirect('/stories');
     } else {
       res.render('stories/edit', {

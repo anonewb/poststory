@@ -57,7 +57,7 @@ app.engine('handlebars', exphbs({
     stripTags: stripTags,
     formatDate: formatDate,
     select: select,
-    editIcon: editIcon
+    editIcon: editIcon //add editIcon
   },
   defaultLayout:'main'
 }));
