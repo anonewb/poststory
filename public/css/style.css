@@ -1,29 +1,37 @@
 body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
+	font-family: 'Bree Serif', serif;
+	font-size: large;
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
 
 main {
-  flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
-.nav-wrapper .fa-bars{
-  font-size:25px;
+.nav-wrapper .fa-bars {
+	font-size: 25px;
 }
 
-footer{
-  margin-top:20px;
+footer {
+	margin-top: 20px;
 }
 
-.story-text{
-  height:120px;
+.story-text {
+	height: 120px;
 }
 
-.dash-status{
-  text-transform: capitalize;
+.dash-status {
+	text-transform: capitalize;
 }
 
-#delete-form{
-  display:inline;
+#delete-form {
+	display: inline;
+}
+
+@media (max-width: 421px) {
+	#td-width {
+		width: 83px;
+	}
 }
